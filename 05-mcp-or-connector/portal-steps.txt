@@ -1,0 +1,31 @@
+Same agent: AB100-HR-Agent
+Add only one extra tool (MCP or Outlook). Not both.
+
+A. Try MCP first
+1. Tools → +
+2. Open the MCP tab
+3. Add one server if any is listed
+4. Permissions: Always allow
+5. Connect your account
+6. If the tab is empty, use B
+
+B. Fallback — Outlook connector
+1. Tools → +
+2. Featured or Connectors → Office 365 Outlook
+3. Pick Send an email (V2) or the closest Send email action
+4. Permissions: Always allow
+5. Sign in / Use this connection (author)
+
+Then
+6. Append agent-instructions-add.txt to Instructions (keep PATH A–D)
+7. Publish the agent
+8. Preview → New chat
+
+   Email HR a sick leave confirmation for 2026-12-12 for 3 days
+
+   Expect the Outlook or MCP tool to run.
+   Check your inbox if you used Outlook.
+
+9. Still check Lab 1:
+   How many casual leave days do I get?
+   Expect 12 + citation

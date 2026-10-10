@@ -1,0 +1,5 @@
+Knowledge answers from a file.
+A skill runs a fixed form.
+An agent flow does a deterministic action you authored.
+A prompt writes text.
+MCP or a connector extends the agent to a live system (email, Dataverse, SharePoint).

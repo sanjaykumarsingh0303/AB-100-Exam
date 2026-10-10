@@ -1,0 +1,8 @@
+Tool: Office 365 Outlook — Send an email (V2)
+When to use: only when the user asks to email HR or send the leave confirmation.
+Do not use for policy questions, leave forms, or drafting without sending.
+
+Inputs
+- To: demo mailbox (your own address)
+- Subject: leave confirmation
+- Body: LeaveType, StartDate, DayCount only. No extra policy.

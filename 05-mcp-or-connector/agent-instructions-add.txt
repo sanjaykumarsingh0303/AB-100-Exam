@@ -1,0 +1,2 @@
+PATH E is included in 01-hr-agent-grounding/agent-instructions.txt
+Paste that full file into Copilot Studio Instructions. Do not paste this file alone.
