@@ -1,0 +1,31 @@
+AB100 Employee HR Policy (short reference)
+Last updated: 10 October 2026
+Contact for exceptions: hr@ab100.example
+
+1. Leave
+- Casual leave: 12 days per calendar year.
+- Sick leave: 8 days per calendar year. A medical certificate is required if sick leave exceeds 2 consecutive days.
+- Earned leave: 15 days per calendar year. Unused earned leave can be carried forward up to 30 days.
+- Leave request: apply in the HR portal at least 3 working days before the leave start date, except for sick leave.
+- Leave approval: reporting manager approves casual and earned leave. HR records the balance.
+
+2. Work from home (WFH)
+- Eligible employees may work from home up to 2 days per week.
+- WFH must be approved by the reporting manager in the HR portal before the WFH day.
+- Core hours on WFH days are 10:00 to 16:00 India Standard Time.
+- WFH is not allowed on the day immediately before or after a company holiday unless HR approves an exception.
+
+3. Holidays
+Company holidays for 2026:
+- 26 January — Republic Day
+- 25 March — Holi
+- 14 August — Independence Day (observed)
+- 2 October — Gandhi Jayanti
+- 20 October — Diwali
+- 25 December — Christmas
+
+The office is closed on the holidays listed above. These days do not count against leave balance.
+
+4. What this file does not cover
+This file does not define salary, bonus, notice period, resignation, parental leave, or visa policy.
+For anything not written here, employees must contact HR. Do not assume a policy.
