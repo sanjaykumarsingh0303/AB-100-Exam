@@ -1,0 +1,23 @@
+Name: DraftLeaveConfirmation
+Type: prompt action (not knowledge, not a workflow)
+
+When to use
+- User says: draft confirmation, write the leave email, summarize this leave request
+- After a leave is confirmed, if they ask for a written confirmation
+Do not use for policy questions or to submit leave.
+
+Inputs
+- LeaveType (text)
+- StartDate (text, YYYY-MM-DD)
+- DayCount (number)
+
+Prompt
+You draft a short HR confirmation. Use only the three inputs. Do not add policy, balances, or extra days.
+
+Write 4 to 6 lines:
+1. Subject line
+2. Greeting
+3. One sentence stating LeaveType, StartDate, and DayCount
+4. Closing: this is a draft for HR. Contact hr@ab100.example to change it.
+
+Output: plain text only.

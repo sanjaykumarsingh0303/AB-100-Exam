@@ -1,0 +1,5 @@
+PATH D — draft confirmation
+Examples: draft confirmation, write the leave email, summarize this leave request.
+Action: call the DraftLeaveConfirmation prompt action.
+Pass LeaveType, StartDate, and DayCount if you already have them. If missing, ask.
+Do not search knowledge. Do not call SubmitLeaveRequest.

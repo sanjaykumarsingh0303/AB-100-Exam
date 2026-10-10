@@ -1,0 +1,17 @@
+1. Same agent: AB100-HR-Agent
+2. Tools → + → Prompt (or New prompt)
+3. Name: DraftLeaveConfirmation
+4. Add inputs LeaveType, StartDate, DayCount
+5. Paste the Prompt section from prompt-action.txt
+6. Save / Publish the prompt
+7. Append agent-instructions-add.txt to agent Instructions
+8. Publish the agent
+9. Preview → New chat:
+
+   Draft a confirmation for Sick leave starting 2026-12-12 for 3 days
+
+   Expect a short email draft. No 12-day policy. No SubmitLeaveRequest.
+
+10. Then still check Lab 1:
+    How many casual leave days do I get?
+    Expect 12 + citation
