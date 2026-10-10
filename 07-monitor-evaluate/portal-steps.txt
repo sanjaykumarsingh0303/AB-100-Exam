@@ -1,0 +1,30 @@
+Same agent: AB100-HR-Agent
+No new skill or tool.
+
+1. Open AB100-HR-Agent in Copilot Studio
+
+2. Evaluate (top bar)
+   Add 3 test questions if the page is empty:
+   - How many casual leave days do I get?
+   - What is the notice period?
+   - I want to apply for leave
+   Run the evaluation if a Run button exists.
+   Note: in-file should cite knowledge. Notice period should not invent policy.
+
+3. Monitor (top bar)
+   Open sessions / activity.
+   Find a recent Preview chat (leave request or email).
+   Confirm you can see:
+   - user text
+   - which path or tool ran (knowledge, skill, flow, Outlook)
+   - success or error (the HTTP 400 would show here)
+
+4. Optional: Analytics / performance
+   If a chart or session count exists, open it once.
+
+Validation
+- You opened Evaluate and Monitor
+- You can point at one session and say which tool or knowledge ran
+- Exam talk: we use these pages to tune instructions and tools
+
+Do not change PATH A-E unless a test clearly fails.

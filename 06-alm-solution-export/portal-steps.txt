@@ -1,0 +1,26 @@
+Lab 6 — export AB100-HR-Agent as a solution
+No new skill or knowledge file.
+
+1. Open https://make.powerapps.com
+2. Confirm environment is the same one as Copilot Studio (GlobalLogic default)
+3. Left pane → Solutions → New solution
+   Name: AB100HRAgent
+   Publisher: create one if needed (prefix ab100)
+   Save
+4. In the solution → Add existing
+   Add:
+   - Agent: AB100-HR-Agent
+   - Agent flows: SubmitLeaveRequest, DraftLeaveConfirmation (if listed)
+   - Connection references if prompted
+5. Save
+6. Export
+   - Unmanaged is enough for this lab
+   - Download the zip
+7. Optional: in a second environment, Import the zip and confirm the agent appears
+
+Validation
+- The zip downloads
+- The solution shows the agent (and flows if added)
+- You can say: source env → solution → export → target env → import
+
+Do not delete the agent after export.

@@ -1,0 +1,29 @@
+Same agent. No new knowledge or skill.
+
+1. Copilot Studio → AB100-HR-Agent → Settings (gear) or ...
+   Open Security / Authentication / Sharing if you see them.
+   Note: who can use the agent (makers only vs org).
+   For a demo, makers-only is safer.
+
+2. Tools → Outlook Send an email
+   Confirm Permissions is explicit (Always allow or Ask).
+   In prod you would not leave send-mail open to everyone.
+
+3. Power Platform admin (if you have access)
+   https://admin.powerplatform.microsoft.com
+   Policies → Data policies (DLP)
+   Open the policy for GlobalLogic default (or note if none).
+   Exam point: Outlook and Copilot Studio must be allowed together or the send-email tool is blocked.
+
+4. Knowledge
+   Confirm only AB100-HR-Policy.txt is attached.
+   Search all websites stays off. That is data grounding control.
+
+5. Instructions
+   Confirm PATH C: do not invent policy. That is the prompt-injection / hallucination control.
+
+Validation
+- Web search is off
+- You can say who may use the agent
+- You can say DLP governs connectors
+- You can say Monitor + solution export are the audit/ALM trail

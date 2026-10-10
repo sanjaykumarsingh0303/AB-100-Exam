@@ -1,0 +1,6 @@
+Say this:
+We built AB100-HR-Agent in Copilot Studio.
+For ALM we added it to a Power Platform solution with its flows and connection references.
+Export unmanaged from dev. Import to test or prod as managed when we want it locked.
+Knowledge file, topics/skills, prompts, and connectors move with the solution.
+We do not copy-paste Instructions by hand between environments.

@@ -1,0 +1,5 @@
+Say this:
+We test the HR agent in Evaluate with grounded, fallback, and apply-leave cases.
+We watch live use in Monitor: sessions, failed tool calls, latency.
+If SubmitLeaveRequest fails on connections, Monitor shows it and we fix the connection, then publish again.
+That is how we tune an agent after deploy, not by guessing.

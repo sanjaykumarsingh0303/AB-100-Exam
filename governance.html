@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AB-100 — Governance, Purview, Power Platform Admin</title>
+  <style>
+    :root {
+      --ink: #1b1f24;
+      --muted: #5c6570;
+      --line: #e4e7eb;
+      --bg: #f6f7f8;
+      --card: #fff;
+      --accent: #0b5cab;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.5 "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 24px 72px;
+    }
+    h1 { font-size: 1.75rem; font-weight: 650; margin: 0 0 8px; }
+    h2 { font-size: 1.15rem; margin: 36px 0 10px; }
+    p, li { color: var(--ink); }
+    .lead { color: var(--muted); margin: 0 0 28px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 12px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.95rem;
+    }
+    th { background: #eef3f8; font-weight: 600; }
+    tr:last-child td { border-bottom: 0; }
+    .exam {
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left-width: 4px;
+    }
+    code { font-size: 0.9em; background: #eef1f4; padding: 1px 5px; border-radius: 4px; }
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    .meta { font-size: 0.85rem; color: var(--muted); margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Governance for AB100-HR-Agent</h1>
+    <p class="lead">
+      Project note for Exam AB-100. Governance is how we control who uses the agent,
+      what data it may read, which systems it may call, and how we prove it later.
+    </p>
+
+    <div class="exam">
+      <strong>Exam line.</strong>
+      Power Platform admin governs environments, connectors (DLP), and solutions.
+      Microsoft Purview governs data and communication across Microsoft 365:
+      labels, DLP, communication compliance, and audit.
+      The agent still must ground on the HR file and not invent policy.
+    </div>
+
+    <h2>1. Three layers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Where</th>
+          <th>What it controls</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Agent</td>
+          <td>Copilot Studio</td>
+          <td>Instructions (PATH A–E), knowledge file only, tool permissions, sharing / authentication</td>
+        </tr>
+        <tr>
+          <td>Power Platform admin</td>
+          <td><code>admin.powerplatform.microsoft.com</code></td>
+          <td>Environments, capacity / credits, connector DLP, solutions / ALM</td>
+        </tr>
+        <tr>
+          <td>Microsoft Purview</td>
+          <td><code>purview.microsoft.com</code></td>
+          <td>Sensitivity labels, tenant DLP, communication compliance, audit / eDiscovery, retention</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. What “governance” means on this project</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Communication compliance</strong> — the agent must not invent HR policy or send unofficial mail as approved policy. PATH C says “I don’t know.” PATH D drafts only. PATH E sends only when asked.</li>
+        <li><strong>PII security</strong> — leave dates and mail stay in allowed systems. Web search is off. Only <code>AB100-HR-Policy.txt</code> is knowledge. Sharing limits who can chat.</li>
+        <li><strong>DLP management</strong> — Power Platform DLP allows or blocks Outlook in this environment. Purview DLP can still stop a message that leaks personal data.</li>
+        <li><strong>Access</strong> — who can use, edit, and publish the agent.</li>
+        <li><strong>Audit</strong> — Monitor / Evaluate in Copilot Studio; solution export for ALM; Purview Audit for tenant-wide history.</li>
+      </ul>
+    </div>
+
+    <h2>3. Power Platform admin</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Use for this agent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Environments</td>
+          <td>Dev (GlobalLogic default) vs test / prod. Do not build production in the default env if you can avoid it.</td>
+        </tr>
+        <tr>
+          <td>Licensing / pay-as-you-go</td>
+          <td>Copilot credits. Preview and tools consume credits. Link an Azure billing plan when prepaid capacity is empty.</td>
+        </tr>
+        <tr>
+          <td>Data policies (DLP)</td>
+          <td>Business vs non-business connectors. Outlook must be allowed with Copilot Studio or PATH E is blocked. Block HTTP / social if not needed.</td>
+        </tr>
+        <tr>
+          <td>Solutions</td>
+          <td><code>AB100HRAgent</code> package: agent, knowledge, flows, connection references. Export zip → import in another environment.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Power Platform DLP answers: <em>may this environment call Outlook?</em></p>
+
+    <h2>4. Microsoft Purview</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>What it does</th>
+          <th>HR agent example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Information Protection</td>
+          <td>Sensitivity labels on files and mail</td>
+          <td>Label the HR policy file Confidential</td>
+        </tr>
+        <tr>
+          <td>Purview DLP</td>
+          <td>Stop data leaving M365</td>
+          <td>Block a leave email that includes national ID or salary</td>
+        </tr>
+        <tr>
+          <td>Communication Compliance</td>
+          <td>Review Copilot, Teams, Outlook messages</td>
+          <td>Flag abusive or off-policy HR chat</td>
+        </tr>
+        <tr>
+          <td>Audit / eDiscovery</td>
+          <td>Who did what, and export evidence</td>
+          <td>Who published the agent, who sent mail</td>
+        </tr>
+        <tr>
+          <td>Retention</td>
+          <td>How long transcripts and mail are kept</td>
+          <td>Keep or delete Preview transcripts per policy</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Purview answers: <em>may this person send that content, and can we prove it later?</em></p>
+
+    <h2>5. Do not mix the two DLP names</h2>
+    <div class="card">
+      <p><strong>Power Platform DLP</strong> = connectors in an environment (Outlook yes, Twitter no).</p>
+      <p><strong>Purview DLP</strong> = content in mail, Teams, and files (detect PII, block or warn).</p>
+      <p>An agent can be allowed to use Outlook (platform DLP) and still have a specific email blocked (Purview DLP). That is expected.</p>
+    </div>
+
+    <h2>6. How this maps to the labs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Lab</th>
+          <th>Governance point</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1 Grounding</td>
+          <td>Answers only from the HR file. Citation. Web search off.</td>
+        </tr>
+        <tr>
+          <td>1 Fallback</td>
+          <td>Missing policy → I don’t know / contact HR. No hallucination.</td>
+        </tr>
+        <tr>
+          <td>3–5 Tools</td>
+          <td>Flow, prompt, Outlook run only on the matching PATH. Always allow vs Ask is an access choice.</td>
+        </tr>
+        <tr>
+          <td>6 ALM</td>
+          <td>Solution export is the change package. Import is deploy.</td>
+        </tr>
+        <tr>
+          <td>7 Evaluate / Monitor</td>
+          <td>Quality tests and runtime audit of sessions and failed tools.</td>
+        </tr>
+        <tr>
+          <td>8 This note</td>
+          <td>Name Power Platform admin and Purview together.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="meta">AB-100 Exam · AB100-HR-Agent · Open this file in a browser. Not a substitute for tenant policy.</p>
+  </main>
+</body>
+</html>

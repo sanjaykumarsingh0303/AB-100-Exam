@@ -1,0 +1,6 @@
+Say this:
+The HR agent is grounded. If policy is missing it says it does not know.
+Outlook mail is a connector under DLP, not free internet search.
+We exported the agent in a solution so changes are packaged.
+We use Evaluate and Monitor to find bad answers and failed tools.
+That is responsible AI, security, and governance for AB-100, not a separate chatbot.

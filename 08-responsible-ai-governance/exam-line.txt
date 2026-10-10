@@ -1,0 +1,7 @@
+Responsible AI for this agent means:
+- Ground on the HR file. Do not invent policy (Lab 1).
+- Fallback to HR when the file is silent (Lab 1).
+- Tools run only on the right path (Labs 3-5).
+- Connections use Always allow / author credentials in a demo; in prod, lock who can invoke Outlook.
+- DLP controls which connectors an environment may use.
+- ALM + Monitor give an audit trail of what changed and what ran.

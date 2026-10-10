@@ -1,0 +1,5 @@
+After you publish an agent you must watch it.
+Evaluate = test quality (right answer, citations, no invented policy).
+Monitor = telemetry (sessions, errors, which tools ran, latency).
+AB-100 asks how you analyze backlog, user feedback, and agent metrics.
+You do not only demo Preview. You show Evaluate and Monitor.

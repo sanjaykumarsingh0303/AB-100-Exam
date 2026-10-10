@@ -1,0 +1,4 @@
+ALM for Copilot Studio means the agent, skills, tools, and connections live in a solution.
+You export that solution from one environment and import it to another.
+You do not rebuild the agent by hand in each environment.
+Unmanaged = still editing. Managed = lock for test/prod.
