@@ -1,0 +1,11 @@
+Tool name: SubmitLeaveRequest
+When to use: only after the user confirms Yes on a leave request.
+Do not use for policy questions.
+
+Inputs
+- LeaveType (text): Casual, Sick, or Earned
+- StartDate (date): YYYY-MM-DD
+- DayCount (number): working days
+
+Respond to the agent
+Submitted @{LeaveType} from @{StartDate} for @{DayCount} day(s).

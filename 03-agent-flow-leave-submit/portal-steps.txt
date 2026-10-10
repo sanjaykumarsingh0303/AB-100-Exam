@@ -1,0 +1,9 @@
+1. Agent Instructions: replace with 01-hr-agent-grounding/agent-instructions.txt
+2. Skills → Leave Request: replace with 02-scripted-hr-topic/skill-instructions.txt
+3. Tools → SubmitLeaveRequest: description from tool-description.txt
+4. Publish the workflow, then Publish the agent
+5. Preview: I want to apply for leave → Yes
+   Expect: Submitted ... day(s).
+   Workflow Activity: one successful run
+6. Preview: How many casual leave days do I get?
+   Expect: 12 + citation (no tool)
