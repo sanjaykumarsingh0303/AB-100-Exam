@@ -1,0 +1,33 @@
+Scripted topic nodes (classic Topics canvas)
+
+Trigger: phrases in trigger-phrases.txt
+
+Node 1 — Question
+  Ask: Which leave type do you want?
+  Identify: Multiple choice
+  Options: Casual | Sick | Earned
+  Save as: LeaveType
+
+Node 2 — Question
+  Ask: What is the leave start date? Use YYYY-MM-DD.
+  Identify: User's entire response
+  Save as: StartDate
+
+Node 3 — Question
+  Ask: How many working days do you need?
+  Identify: Number
+  Save as: DayCount
+
+Node 4 — Question
+  Ask: Submit Casual/Sick/Earned leave starting StartDate for DayCount day(s)?
+  Identify: Multiple choice
+  Options: Yes | No
+  Save as: ConfirmSubmit
+
+Node 5 — Condition
+  If ConfirmSubmit = Yes
+    Message: Leave request recorded for HR. This is a demo. Contact HR at hr@ab100.example if you need a change.
+  If ConfirmSubmit = No
+    Message: Cancelled. No leave was submitted.
+
+Node 6 — End topic
